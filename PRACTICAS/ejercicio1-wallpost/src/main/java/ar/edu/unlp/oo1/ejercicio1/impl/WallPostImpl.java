@@ -12,6 +12,12 @@ public class WallPostImpl implements WallPost {
 	private int likes;
 	private boolean featured;
 	
+	public WallPostImpl () {
+		this.text = "Undefined post";
+		this.likes = 0;
+		this.featured = false;
+	}
+	
 	/*
 	 * Este mensaje se utiliza para que una instancia de Wallpost se muestre de forma adecuada
 	 */
