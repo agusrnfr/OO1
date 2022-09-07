@@ -1,10 +1,23 @@
 package ar.edu.unlp.info.oo1.ejercicio2;
 
+import java.time.LocalDate;
+
 public class Ticket {
 	private java.time.LocalDate fecha;
 	private int cantidadDeProductos;
 	private double pesoTotal;
 	private double precioTotal;
+	
+	public Ticket() {
+		
+	}
+	
+	public Ticket(int cantidadDeProductos, double pesoTotal, double precioTotal) {
+		this.cantidadDeProductos = cantidadDeProductos;
+		this.pesoTotal = pesoTotal;
+		this.precioTotal = precioTotal;
+		this.fecha = LocalDate.now();
+	}
 	
 	public java.time.LocalDate getFecha() {
 		return fecha;

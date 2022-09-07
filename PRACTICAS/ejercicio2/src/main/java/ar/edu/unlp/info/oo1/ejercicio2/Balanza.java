@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo1.ejercicio2;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 public class Balanza {
 	private int cantidadDeProductos;
@@ -32,11 +32,12 @@ public class Balanza {
 	}
 	
 	public Ticket emitirTicket () {
-		Ticket ticket = new Ticket();
-		ticket.setCantidadDeProductos(cantidadDeProductos);
+		/*Ticket ticket = new Ticket();
+		ticket.setCantidadDeProductos(this.getCantidadDeProductos());
 		ticket.setFecha(LocalDate.now());
-		ticket.setPesoTotal(pesoTotal);
-		ticket.setPrecioTotal(precioTotal);
+		ticket.setPesoTotal(this.getPesoTotal());
+		ticket.setPrecioTotal(this.getPrecioTotal());*/
+		Ticket ticket = new Ticket(this.getCantidadDeProductos(),this.getPesoTotal(),this.getPrecioTotal());
 		return ticket;
 	}
 	
