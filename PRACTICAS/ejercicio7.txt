@@ -1,0 +1,24 @@
+1)
+
+Gerente alan = new Gerente("Alan Turing");
+double aportesDeAlan = alan.aportes(); 57000 * 0.05 = 2850
+
+metodo #aportes de la clase Gerente{
+	metodo #montoBasico de la clase Gerente * 0.05
+}
+
+
+Gerente alan = new Gerente("Alan Turing");
+double sueldoBasicoDeAlan = alan.sueldoBasico(); 	57000 + 2850 + 8000 = 59850 
+
+1. metodo #sueldoBasico de la clase EmpleadoJerarquico --> no la tiene Gerente, si EmpleadoJerarquico que hace super, va a la clase padre de este que seria Empleado
+	2. metodo #sueldoBasico de la clase Empleado{
+		2.1.1metodo #montoBasico de la clase Gerente ? --> this.montoBasico() es del que se instancio, es decir, Gerente, lo mismo con aportes()
+		2.1.2.metodo #aportes de la clase Gerente ?} 
+ 	3. metodo #bonoPorCategoria de la clase EmpleadoJerarquico
+}
+
+2) aportesDeAlan = 2850
+   sueldoBasicoDeAlan = 57285
+	
+
