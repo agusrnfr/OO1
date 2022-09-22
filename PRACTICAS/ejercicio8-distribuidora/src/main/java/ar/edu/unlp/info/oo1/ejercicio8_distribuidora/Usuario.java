@@ -44,6 +44,8 @@ public class Usuario {
 		return this.facturas;
 	}
 	
+	//SI NO CONSUMIO NADA --> RETORNA 0 (para que no se sume nada)
+	
 	public double ultimoConsumoActiva() {
 		if (this.ultimoConsumo() != null) {
 			return this.ultimoConsumo().getConsumoEnergiaActiva();
@@ -51,11 +53,15 @@ public class Usuario {
 		else return 0;
 	}
 	
+	//EL ELSE ES SI NO HAY MAXIMO --> NO CONSUMIO NADA
+	
 	public Consumo ultimoConsumo() {
 		return this.consumos
 				.stream()
 				.max((Consumo c1, Consumo c2) -> c1.getFecha().compareTo(c2.getFecha())).orElse(null);
 	}
+	
+	//SI NO CONSUMIO NADA LA FACTURA ESTA VACIA
 	
 	public Factura facturarEnBaseA(double precioKWh) {
 		Factura factura;
@@ -70,7 +76,6 @@ public class Usuario {
 			}
 				factura = new Factura(this.ultimoConsumo().constoEnBaseA(precioKWh),descuento,this);
 		}
-		this.agregarFactura(factura);
 		return factura;
 	}
 }
