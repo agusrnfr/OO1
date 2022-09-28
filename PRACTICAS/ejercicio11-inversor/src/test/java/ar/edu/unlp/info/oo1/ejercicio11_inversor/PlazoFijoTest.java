@@ -20,7 +20,7 @@ class PlazoFijoTest {
 
 	@Test
 	void testConstructor() {
-		assertEquals(LocalDate.of(2022, 9, 17), plazoFijo.getFechaDeConstitucion());
+		assertEquals(LocalDate.now().minus(10,ChronoUnit.DAYS) , plazoFijo.getFechaDeConstitucion());
 		assertEquals(100, plazoFijo.getMontoDepositado());
 		assertEquals(0.05,plazoFijo.getPorcentajeDeInteresDiario());
 	}
