@@ -40,6 +40,6 @@ public abstract class Cuenta {
 		return false;
 	}
 
-	public abstract boolean puedeExtraer (double monto);
+	protected abstract boolean puedeExtraer (double monto);
 	
 }
