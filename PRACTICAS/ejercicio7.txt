@@ -9,7 +9,7 @@ metodo #aportes de la clase Gerente{
 
 
 Gerente alan = new Gerente("Alan Turing");
-double sueldoBasicoDeAlan = alan.sueldoBasico(); 	57000 + 2850 + 8000 = 59850 
+double sueldoBasicoDeAlan = alan.sueldoBasico(); 	57000 + 2850 + 8000 = 67850
 
 1. metodo #sueldoBasico de la clase EmpleadoJerarquico --> no la tiene Gerente, si EmpleadoJerarquico que hace super, va a la clase padre de este que seria Empleado
 	2. metodo #sueldoBasico de la clase Empleado{
@@ -19,6 +19,6 @@ double sueldoBasicoDeAlan = alan.sueldoBasico(); 	57000 + 2850 + 8000 = 59850
 }
 
 2) aportesDeAlan = 2850
-   sueldoBasicoDeAlan = 57285
+   sueldoBasicoDeAlan = 67850
 	
 
