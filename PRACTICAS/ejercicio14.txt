@@ -1,0 +1,20 @@
+* Investigue cómo hacer para crear una fecha determinada, por ejemplo 15/09/1972.
+
+public static LocalDate of(int year, Month month, int dayOfMonth) 
+public static LocalDate of(int year,int month,int dayOfMonth)
+
+* Investigue cómo hacer para determinar si la fecha de hoy se encuentra entre las fechas 15/12/1972 y 15/12/2032. Sugerencia: vea los métodos permiten comparar LocalDates y que retornan booleans.
+
+boolean	isAfter(ChronoLocalDate other)
+Comprueba si esta fecha es posterior a la fecha especificada.
+boolean	isBefore(ChronoLocalDate other)
+Comprueba si esta fecha es anterior a la fecha especificada.
+boolean	isEqual(ChronoLocalDate other)
+Comprueba si esta fecha es igual a la fecha especificada.
+
+* Investigue cómo hacer para calcular el número de días entre dos fechas. Lo mismo para el número de meses y de años Sugerencia: vea el método until.
+
+Period	until(ChronoLocalDate endDateExclusive)
+Calcula el período entre esta fecha y otra fecha como un Period.
+long	until(Temporal endExclusive, TemporalUnit unit)
+Calcula la cantidad de tiempo hasta otra fecha en términos de la unidad especificada.
