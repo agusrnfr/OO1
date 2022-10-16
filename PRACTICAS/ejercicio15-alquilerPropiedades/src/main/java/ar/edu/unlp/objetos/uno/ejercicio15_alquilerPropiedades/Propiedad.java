@@ -53,7 +53,7 @@ public class Propiedad {
 	}
 	
 	public double calcularIngresoPropiedad(DateLapse periodo) {
-		return this.reservas.stream().mapToDouble(reserva -> reserva.calcularReserva()).sum();
+		return this.reservas.stream().filter(reserva -> reserva.overlaps(periodo)).mapToDouble(reserva -> reserva.calcularReserva()).sum();
 		
 	}
 	

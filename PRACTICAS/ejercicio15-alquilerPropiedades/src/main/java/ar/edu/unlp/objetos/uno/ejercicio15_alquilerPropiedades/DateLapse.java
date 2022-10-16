@@ -42,11 +42,19 @@ public class DateLapse {
 	}
 	
 	public boolean overlaps (DateLapse another) {
-		return another.includesDate(this.getFrom()) || another.includesDate(this.getTo());
+		return another.includesDate(this.getFrom()) || another.includesDate(this.getTo()) || another.equalsFrom(this.getFrom()) || another.equalsTo(this.getTo());
 	}
 	
 	public boolean laterFrom () {
 		return this.getFrom().isAfter(LocalDate.now());
+	}
+	
+	public boolean equalsTo(LocalDate date) {
+		return this.getTo().equals(date);
+	}
+	
+	public boolean equalsFrom(LocalDate date) {
+		return this.getFrom().equals(date);
 	}
 
 }

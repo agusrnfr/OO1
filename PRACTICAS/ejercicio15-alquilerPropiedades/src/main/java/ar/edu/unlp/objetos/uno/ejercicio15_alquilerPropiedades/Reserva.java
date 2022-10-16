@@ -10,8 +10,8 @@ public class Reserva {
 	}
 	
 	public double calcularReserva() {
-		return propiedad.calcularPrecio(periodo.sizeInDays());
-		//return periodo.sizeInDays() * propiedad.getPrecioPorNoche(); --> no se cual es mejor solucion
+		//return propiedad.calcularPrecio(periodo.sizeInDays());--> no se cual es mejor solucion
+		return periodo.sizeInDays() * propiedad.getPrecioPorNoche(); 
 	}
 	
 	public boolean overlaps (DateLapse another) {
