@@ -12,9 +12,11 @@ public class Reserva {
 	}
 	
 	public double calcularReserva() {
-		//return propiedad.calcularPrecio(periodo.sizeInDays());--> no se cual es mejor solucion
-		return periodo.sizeInDays() * propiedad.getPrecioPorNoche(); 
+		return propiedad.calcularPrecio(periodo.sizeInDays());
+		//return periodo.sizeInDays() * propiedad.getPrecioPorNoche();  --> no se cual es mejor solucion ES MEJOR LA DE ARRIBA
 	}
+	
+	//DELEGAR EL CALCULAR REEMBOLSO A LA PROPIEDAD, Y QUE EL LE PIDA A LA POLITICA !! NO USAR GET
 	
 	public double calcularReembolso(LocalDate fechaCancelacion) {
 		return propiedad.getPolitica().calcularReembolso(fechaCancelacion, this.periodo.getFrom(), this.calcularReserva());
