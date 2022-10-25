@@ -53,7 +53,7 @@ public class Empleado {
 	public int antiguedad() {
 		return this.contratos.stream().
 				min((Contrato c1, Contrato c2)-> c1.getFechaInicio().compareTo(c2.getFechaInicio())).
-				map(contrato -> (int) ChronoUnit.DAYS.between (contrato.getFechaInicio(),LocalDate.now())).orElse(0);
+				map(contrato -> (int) ChronoUnit.YEARS.between (contrato.getFechaInicio(),LocalDate.now())).orElse(0);
 	}
 	
 	public Recibo generarRecibo() {
