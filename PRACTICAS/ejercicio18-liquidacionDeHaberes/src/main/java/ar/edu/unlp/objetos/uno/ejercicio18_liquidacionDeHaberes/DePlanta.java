@@ -1,6 +1,7 @@
 package ar.edu.unlp.objetos.uno.ejercicio18_liquidacionDeHaberes;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class DePlanta extends Contrato{
 	private double sueldoMensual;
@@ -25,6 +26,10 @@ public class DePlanta extends Contrato{
 			monto += this.montoPorHijos;
 		}
 		return monto;
+	}
+	
+	public int calcularAnios() {
+		return (int) this.getFechaInicio().until(LocalDate.now(),ChronoUnit.YEARS);
 	}
 
 	@Override

@@ -35,14 +35,18 @@ public class Empleado {
 	
 	public void cargarContratoPorHoras (LocalDate fechaInicio, 
 			LocalDate fechaFin, double valorPorHora, int horasPorMes) {
+		if (this.tieneContratoVencido()) {
 		PorHoras contrato = new PorHoras (this, fechaInicio, fechaFin, valorPorHora, horasPorMes);
 		this.contratos.add(contrato);
+		}
 	}
 	
 	public void cargarContratoDePlanta (LocalDate fechaInicio, 
 			double sueldoMensual, double montoPorConyugue, double montoPorHijos) {
+		if (this.tieneContratoVencido()) {
 		DePlanta contrato = new DePlanta (this, fechaInicio, sueldoMensual, montoPorConyugue, montoPorHijos);
 		this.contratos.add(contrato);
+		}
 		
 	}
 	
@@ -51,9 +55,9 @@ public class Empleado {
 	}
 	
 	public int antiguedad() {
-		return this.contratos.stream().
-				min((Contrato c1, Contrato c2)-> c1.getFechaInicio().compareTo(c2.getFechaInicio())).
-				map(contrato -> (int) ChronoUnit.YEARS.between (contrato.getFechaInicio(),LocalDate.now())).orElse(0);
+		return this.contratos.stream()
+				.mapToInt(contrato -> contrato.calcularAnios())
+				.sum();
 	}
 	
 	public Recibo generarRecibo() {
@@ -80,8 +84,10 @@ public class Empleado {
 	}
 	
 	public double calcularMontoTotal() {
+		if (!this.tieneContratoVencido()) {
 		return this.contratoVigente().map(contrato -> contrato.calcularMonto() + contrato.calcularMonto() * this.calcularAumento()).orElse(0d);
-		
+		}
+		return 0;
 	}
 
 	public boolean tieneConyugue() {

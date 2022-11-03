@@ -16,7 +16,7 @@ class PorHorasTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		this.vencido = new PorHoras (new Empleado ("Jose","Diaz","123",LocalDate.of(2002, 10, 24),false, true), LocalDate.of(2015, 9, 20), LocalDate.of(2022, 10, 23), 100, 100);
-		this.noVencido = new PorHoras (new Empleado ("Jose","Diaz","123",LocalDate.of(2002, 10, 24),false, true), LocalDate.of(2015, 9, 20), LocalDate.of(2023, 10, 23), 100, 100);
+		this.noVencido = new PorHoras (new Empleado ("Jose","Diaz","123",LocalDate.of(2002, 10, 24),false, true), LocalDate.of(2015, 11, 3), LocalDate.of(2023, 10, 23), 100, 100);
 	}
 
 	@Test
@@ -29,6 +29,11 @@ class PorHorasTest {
 	void testCalcularMonto() {
 		assertEquals(10000,this.vencido.calcularMonto());
 		assertEquals(10000,this.noVencido.calcularMonto());
+	}
+	
+	@Test
+	void testCalcularAnios() {
+		assertEquals(7,this.noVencido.calcularAnios());
 	}
 
 }

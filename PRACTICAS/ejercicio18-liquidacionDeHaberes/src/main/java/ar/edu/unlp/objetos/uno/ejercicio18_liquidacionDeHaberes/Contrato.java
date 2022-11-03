@@ -18,6 +18,8 @@ public abstract class Contrato {
 	public abstract boolean estaVencido();
 	
 	public abstract double calcularMonto();
+	
+	public abstract int calcularAnios();
 
 	public Empleado getEmpleado() {
 		return empleado;
